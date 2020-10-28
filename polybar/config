@@ -30,7 +30,7 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #111
+background = #aa2F343F 
 background-alt = #444
 ;foreground = ${xrdb:color7:#222}
 foreground = #ddd
@@ -77,9 +77,9 @@ font-4 = ShureTechMono Nerd Font:fontformat=truetype:size=14;3
 
 modules-left = i3
 modules-center = 
-modules-right = pulseaudio temperature date powermenu
+modules-right = pulseaudio temperature cpu memory date powermenu
 ; tray-position = right
-; tray-padding = 2
+; tray-padding = 1
 ;tray-background = #0063ff
 
 ;wm-restack = bspwm
@@ -227,7 +227,7 @@ card = intel_backlight
 [module/cpu]
 type = internal/cpu
 interval = 2
-format-prefix = ﬙
+format-prefix = "漣 "
 format-prefix-font = 4
 format-prefix-foreground = ${colors.accent}
 format-underline = #f90000
@@ -236,10 +236,11 @@ label = %percentage:2%%
 [module/memory]
 type = internal/memory
 interval = 2
-format-prefix = " "
-format-prefix-foreground = ${colors.foreground-alt}
+format-prefix = "﬙ "
+format-prefix-font = 4
+format-prefix-foreground = ${colors.accent}
 format-underline = #4bffdc
-label = %percentage_used%%
+label = %gb_used%
 
 
 [module/eth]
@@ -270,7 +271,7 @@ time-alt = %H:%M:%S
 
 format-prefix = 
 format-prefix-foreground = ${colors.accent}
-format-prefix-font = 5
+format-prefix-font = 4
 format-underline = #0a6cf5
 
 label = %date% %time%
@@ -335,12 +336,12 @@ warn-temperature = 90
 format = <ramp><label>
 format-underline = #f50a4d
 format-warn = <ramp><label-warn>
-format-warn-prefix = 
-format-warn-prefix-font = 5
+format-warn-prefix = 﨏 
+format-warn-prefix-font = 4
 format-warn-prefix-foreground = ${colors.accent}
 
-format-prefix = " "
-format-prefix-font = 5
+format-prefix = 﨎
+format-prefix-font = 4
 format-prefix-foreground = ${colors.accent}
 
 label = %temperature-c%
@@ -359,7 +360,7 @@ expand-right = true
 
 format-spacing = 1
 
-label-open = 
+label-open = 襤
 label-open-foreground = ${colors.accent}
 label-close =  cancel
 label-close-foreground = ${colors.accent}
