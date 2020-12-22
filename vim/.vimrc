@@ -1,7 +1,20 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+" set paste mode so that ident doesn't break
+set pastetoggle=<F1>
+" set pipes to mark tabs
+:set list lcs=tab:\|\ 
+" set line numbers
 :set number
+" set automatic brackets closing 
+inoremap " ""<left>
+inoremap ' ''<left>
+inoremap ( ()<left>
+inoremap [ []<left>
+inoremap { {}<left>
+inoremap {<CR> {<CR>}<ESC>O
+inoremap {;<CR> {<CR>};<ESC>O
 " set the runtime path to include Vundle and initialize
 set rtp+=/home/kira02/.vim/bundle/Vundle.vim
 call vundle#begin()
